@@ -1,2 +1,305 @@
-@import "partials/reset";
+// @import "partials/reset";
 @import "partials/bp";
+@import "partials/fonts-and-colors";
+
+body {
+  background-color: $black;//white on larger devices
+  background-image: url(#{$imgPath}binding-dark.png);
+  font-family: $primary-font;
+  font-size: 18px;
+
+  @include bp(medium) {
+    background-color: $white;
+    background-image: url(#{$imgPath}clean-gray-paper.png)
+  }
+}
+
+.container {
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+
+  .moving {
+    margin: 3% auto;
+    overflow: hidden;
+    float: left;
+    width: 100%;
+    //mobile: b-g img of binding-dark
+    //desktop has black background color;
+
+    @include bp(large) {
+      background-color: $black;
+      margin: 0 auto;
+    }
+  }
+
+  .text-over {
+    background-color: $black;
+    color:transparent;
+    display: block;
+    font-size:3rem; //tablet=5.5rem and desk=9rem
+    font-weight:700;
+    margin: 0 auto;
+    overflow:hidden;
+    padding:1%;
+    text-align: center;
+    width: 100%;
+
+    @include bp(medium) {
+      font-size: 5.5rem;
+    }
+
+    @include bp(large) {
+      font-size: 9rem;
+    }
+  }
+
+  span {
+    background: url("http://www.mytinyphone.com/uploads/users/whytchocolate30/396446.gif") -50px repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    display:block;
+  }
+}
+
+//leaving out main styling for now (3:47)
+//tablet may need some header work later
+
+.brewery {
+  img {
+    padding: 2% 0;
+    margin: 0 auto;
+    width: 80%
+  }
+}
+
+.location {
+  background-color: $white; //transparent on desktop
+  margin: 2% auto;
+  overflow: hidden;
+  text-align: center;
+  list-style: none;
+  width: 90%;
+
+  @include bp(large) {
+    background-color: transparent;
+  }
+
+  #icon {
+    width: 20%; //display none on desktop;
+
+    @include bp(large) {
+      display: none;
+    }
+  }
+}
+
+.brew-list {
+  @extend .location;
+
+  //should I extend these or comma them?
+  .list-col-1 {
+    border-right: 1px solid $black;
+    margin: 3% 0;
+    text-align: left;
+    font-size: .6rem; //only 1.1rem for mobile
+    font-weight: 400;
+    line-height: 1.6;
+    list-style-type: none;
+    float: left;
+    padding-left: 0;
+    padding-right: 7%;
+    width: 39%;
+
+    @include bp(medium) {
+      font-size: .8rem;
+      line-height: 1.25;
+      padding-left: 8%;
+      padding-right: 1%;
+    }
+
+    @include bp(large) {
+      font-size: 1.1rem;
+      line-height: 2;
+    }
+  }
+
+  .list-col-2 {
+    @extend .list-col-1;
+    border-right: none;
+    border-left: 1px solid $black;
+    float: left;
+    padding-left: 1%;
+    padding-right: 8%;
+  }
+
+}
+
+.contact {
+  @extend .location;
+  margin-bottom: 20%;
+  //desktop= transparent background and display none on contact imgPath
+
+  @include bp(desktop) {
+    background-color: tansparent;
+  }
+
+  .form-style-1 {
+    input, textarea, select {
+      border: 1px solid #BEBEBE;
+      padding: 1%;
+      margin: auto;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+    }
+
+    .field-divided {
+      width: 45%;
+    }
+
+    .field-long {
+      width: 90%;
+    }
+
+    .field-select {
+      width: 40%;
+    }
+
+    .field-textarea {
+      display: block;
+      height: 100px;
+    }
+
+    input[type=submit], input[type=button] {
+      background: $accent-color;
+      padding: 1% 2%;
+      border: none;
+      color: $black;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    input[type=submit]:hover, input[type=button]:hover {
+      background: #000;
+      color: #fff;
+      box-shadow:none;
+      -moz-box-shadow:none;
+      -webkit-box-shadow:none;
+    }
+    .required{
+      color:red;
+    }
+
+  }
+
+}
+
+.location li {
+  font-weight: 700;
+  list-style: none;
+
+  li a:hover, a:active, a:visited {
+    color: $accent-color;
+  }
+
+  li a:link {
+    color: $black;
+    text-decoration: underline;
+  }
+}
+
+
+.nav-sink {
+  color: $black;
+  float: left;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0 0 1% 0;
+  position: fixed;
+  width: 100%;
+
+  @include bp(mobile) {
+    background: $accent-color;
+    bottom: 0;
+    float: left;
+    min-width: 320px;
+  }
+  @include bp(medium) {
+    background-color: $black;
+    background-image: url("../images/binding-dark.png");
+    border: 2px solid $black;
+    top: 0;
+    max-height: 40px;
+  }
+
+  @include bp(large) {
+    top: 33%;
+    float: left;
+    margin-bottom: 5%;
+    position: absolute;
+  }
+
+}
+
+.nav-er {
+  background-color: $accent-color;
+  font-weight: 700;
+  float: left;
+  max-height: 50px;
+  margin: 0;
+  list-style: none;
+  text-align: left;
+  text-decoration: none;
+  width: 33%;
+
+  @include bp (medium) {
+    background-color: $accent-color;
+    border: 2px solid $black;
+    border-radius: 5px;
+    font-size: .9rem;
+    width: 15%;
+  }
+
+  @include bp(large) {
+    text-align: center;
+    margin: 0 auto 0 12%;
+  }
+}
+
+.footer {
+  background-color: $black;
+  background-image: url('../images/binding-dark.png');
+  color: $accent-color;
+  display: none;
+  font-weight: 700;
+  overflow: hidden;
+  width: 100%;
+
+  @include bp(medium) {
+    display: block;
+  }
+
+  .sink-left span {
+    display: inline-block;
+    float: left;
+    padding: 2% 1%;
+    width: 82%;
+  }
+
+  .sink-right {
+    display: inline-block;
+    float: right;
+    text-align: right;
+    width: 5%;
+  }
+
+   img {
+    padding-top: 1%;
+    width: 4%;
+  }
+}

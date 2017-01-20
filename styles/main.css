@@ -1,55 +1,217 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
-
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
-
 body {
-  line-height: 1; }
+  background-color: #000000;
+  background-image: url(../images/binding-dark.png);
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px; }
+  @media screen and (min-width: 521px) {
+    body {
+      background-color: #ffffff;
+      background-image: url(../images/clean-gray-paper.png); } }
 
-ol, ul {
+.container {
+  overflow: hidden;
+  position: relative;
+  margin: 0; }
+  .container .moving {
+    margin: 3% auto;
+    overflow: hidden;
+    float: left;
+    width: 100%; }
+    @media screen and (min-width: 831px) {
+      .container .moving {
+        background-color: #000000;
+        margin: 0 auto; } }
+  .container .text-over {
+    background-color: #000000;
+    color: transparent;
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 1%;
+    text-align: center;
+    width: 100%; }
+    @media screen and (min-width: 521px) {
+      .container .text-over {
+        font-size: 5.5rem; } }
+    @media screen and (min-width: 831px) {
+      .container .text-over {
+        font-size: 9rem; } }
+  .container span {
+    background: url("http://www.mytinyphone.com/uploads/users/whytchocolate30/396446.gif") -50px repeat;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    display: block; }
+
+.brewery img {
+  padding: 2% 0;
+  margin: 0 auto;
+  width: 80%; }
+
+.location, .brew-list, .contact {
+  background-color: #ffffff;
+  margin: 2% auto;
+  overflow: hidden;
+  text-align: center;
+  list-style: none;
+  width: 90%; }
+  @media screen and (min-width: 831px) {
+    .location, .brew-list, .contact {
+      background-color: transparent; } }
+  .location #icon, .brew-list #icon, .contact #icon {
+    width: 20%; }
+    @media screen and (min-width: 831px) {
+      .location #icon, .brew-list #icon, .contact #icon {
+        display: none; } }
+
+.brew-list .list-col-1, .brew-list .list-col-2 {
+  border-right: 1px solid #000000;
+  margin: 3% 0;
+  text-align: left;
+  font-size: .6rem;
+  font-weight: 400;
+  line-height: 1.6;
+  list-style-type: none;
+  float: left;
+  padding-left: 0;
+  padding-right: 7%;
+  width: 39%; }
+  @media screen and (min-width: 521px) {
+    .brew-list .list-col-1, .brew-list .list-col-2 {
+      font-size: .8rem;
+      line-height: 1.25;
+      padding-left: 8%;
+      padding-right: 1%; } }
+  @media screen and (min-width: 831px) {
+    .brew-list .list-col-1, .brew-list .list-col-2 {
+      font-size: 1.1rem;
+      line-height: 2; } }
+.brew-list .list-col-2 {
+  border-right: none;
+  border-left: 1px solid #000000;
+  float: left;
+  padding-left: 1%;
+  padding-right: 8%; }
+
+.contact {
+  margin-bottom: 20%; }
+  .contact .form-style-1 input, .contact .form-style-1 textarea, .contact .form-style-1 select {
+    border: 1px solid #BEBEBE;
+    padding: 1%;
+    margin: auto;
+    text-align: left; }
+  .contact .form-style-1 label {
+    display: block;
+    text-align: left; }
+  .contact .form-style-1 .field-divided {
+    width: 45%; }
+  .contact .form-style-1 .field-long {
+    width: 90%; }
+  .contact .form-style-1 .field-select {
+    width: 40%; }
+  .contact .form-style-1 .field-textarea {
+    display: block;
+    height: 100px; }
+  .contact .form-style-1 input[type=submit], .contact .form-style-1 input[type=button] {
+    background: #ffcd29;
+    padding: 1% 2%;
+    border: none;
+    color: #000000;
+    font-weight: 700;
+    font-size: 1rem; }
+  .contact .form-style-1 input[type=submit]:hover, .contact .form-style-1 input[type=button]:hover {
+    background: #000;
+    color: #fff;
+    box-shadow: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none; }
+  .contact .form-style-1 .required {
+    color: red; }
+
+.location li, .brew-list li, .contact li {
+  font-weight: 700;
   list-style: none; }
+  .location li li a:hover, .brew-list li li a:hover, .contact li li a:hover, .location li a:active, .brew-list li a:active, .contact li a:active, .location li a:visited, .brew-list li a:visited, .contact li a:visited {
+    color: #ffcd29; }
+  .location li li a:link, .brew-list li li a:link, .contact li li a:link {
+    color: #000000;
+    text-decoration: underline; }
 
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-img {
-  max-with: 100%;
+.nav-sink {
+  color: #000000;
+  float: left;
+  list-style: none;
+  margin: 0;
+  overflow: hidden;
+  padding: 0 0 1% 0;
+  position: fixed;
   width: 100%; }
+  @media screen and (min-width: 320px) {
+    .nav-sink {
+      background: #ffcd29;
+      bottom: 0;
+      float: left;
+      min-width: 320px; } }
+  @media screen and (min-width: 521px) {
+    .nav-sink {
+      background-color: #000000;
+      background-image: url("../images/binding-dark.png");
+      border: 2px solid #000000;
+      top: 0;
+      max-height: 40px; } }
+  @media screen and (min-width: 831px) {
+    .nav-sink {
+      top: 33%;
+      float: left;
+      margin-bottom: 5%;
+      position: absolute; } }
 
-*, *:before, *:after {
-  box-sizing: border-box; }
+.nav-er {
+  background-color: #ffcd29;
+  font-weight: 700;
+  float: left;
+  max-height: 50px;
+  margin: 0;
+  list-style: none;
+  text-align: left;
+  text-decoration: none;
+  width: 33%; }
+  @media screen and (min-width: 521px) {
+    .nav-er {
+      background-color: #ffcd29;
+      border: 2px solid #000000;
+      border-radius: 5px;
+      font-size: .9rem;
+      width: 15%; } }
+  @media screen and (min-width: 831px) {
+    .nav-er {
+      text-align: center;
+      margin: 0 auto 0 12%; } }
+
+.footer {
+  background-color: #000000;
+  background-image: url("../images/binding-dark.png");
+  color: #ffcd29;
+  display: none;
+  font-weight: 700;
+  overflow: hidden;
+  width: 100%; }
+  @media screen and (min-width: 521px) {
+    .footer {
+      display: block; } }
+  .footer .sink-left span {
+    display: inline-block;
+    float: left;
+    padding: 2% 1%;
+    width: 82%; }
+  .footer .sink-right {
+    display: inline-block;
+    float: right;
+    text-align: right;
+    width: 5%; }
+  .footer img {
+    padding-top: 1%;
+    width: 4%; }
 
 /*# sourceMappingURL=main.css.map */
